@@ -1,0 +1,63 @@
+
+@activity1_1
+Scenario: Opening a webpage using Selenium     # src/test/java/feature/activity1_1.feature:4
+  Given User is on Google Home Page            # stepDefinitions.GoogleSearchSteps.userIsOnGooglePage()
+  When User types in Cheese and hits ENTER     # stepDefinitions.GoogleSearchSteps.userTypesInCheeseAndHitsENTER()
+  Then Show how many search results were shown # stepDefinitions.GoogleSearchSteps.showHowManySearchResultsWereShown()
+  And Close the browser                        # stepDefinitions.GoogleSearchSteps.closeTheBrowser()
+
+@activity1_2
+Scenario: Testing Login                             # src/test/java/feature/activity1_2.feature:4
+  Given User is on Login page                       # stepDefinitions.LoginSteps.loginPage()
+  When User enters username and password            # stepDefinitions.LoginSteps.enterCredentials()
+  Then Read the page title and confirmation message # stepDefinitions.LoginSteps.readTitleAndHeading()
+  And Close the Browser                             # stepDefinitions.LoginSteps.closeBrowser()
+
+@activity1_3 @SimpleAlert @SmokeTest
+Scenario: Test for Simple Alert            # src/test/java/feature/activity1_3.feature:5
+  Given User is on the page                # stepDefinitions.AlertTestSteps.openPage()
+  When User clicks the Simple Alert button # stepDefinitions.AlertTestSteps.openSimpleAlert()
+  Then Alert opens                         # stepDefinitions.AlertTestSteps.switchFocus()
+  And Read the text from it and print it   # stepDefinitions.AlertTestSteps.readAlert()
+  And Close the alert                      # stepDefinitions.AlertTestSteps.closeAlert()
+  And Close Browser                        # stepDefinitions.AlertTestSteps.closeBrowser()
+
+@activity1_3 @ConfirmAlert
+Scenario: Test for Confirm Alert            # src/test/java/feature/activity1_3.feature:14
+  Given User is on the page                 # stepDefinitions.AlertTestSteps.openPage()
+  When User clicks the Confirm Alert button # stepDefinitions.AlertTestSteps.openConfirmAlert()
+  Then Alert opens                          # stepDefinitions.AlertTestSteps.switchFocus()
+  And Read the text from it and print it    # stepDefinitions.AlertTestSteps.readAlert()
+  And Close the alert with Cancel           # stepDefinitions.AlertTestSteps.closeAlertWithCAncel()
+  And Close Browser                         # stepDefinitions.AlertTestSteps.closeBrowser()
+
+@activity1_3 @PromptAlert
+Scenario: Test for Prompt Alert            # src/test/java/feature/activity1_3.feature:23
+  Given User is on the page                # stepDefinitions.AlertTestSteps.openPage()
+  When User clicks the Prompt Alert button # stepDefinitions.AlertTestSteps.openPromptAlert()
+  Then Alert opens                         # stepDefinitions.AlertTestSteps.switchFocus()
+  And Read the text from it and print it   # stepDefinitions.AlertTestSteps.readAlert()
+  And Write a custom message in it         # stepDefinitions.AlertTestSteps.writeToPrompt()
+  And Close the alert                      # stepDefinitions.AlertTestSteps.closeAlert()
+  And Close Browser                        # stepDefinitions.AlertTestSteps.closeBrowser()
+
+@activity2_4
+Scenario: Testing with Data from Scenario           # src/test/java/feature/activity2_4.feature:4
+  Given User is on Login page                       # stepDefinitions.LoginSteps.loginPage()
+  When User enters "admin" and "password"           # stepDefinitions.LoginSteps.user_enters_and(java.lang.String,java.lang.String)
+  Then Read the page title and confirmation message # stepDefinitions.LoginSteps.readTitleAndHeading()
+  And Close the Browser                             # stepDefinitions.LoginSteps.closeBrowser()
+
+@activity2_5
+Scenario Outline: Testing with Data from Scenario   # src/test/java/feature/activity2_5.feature:12
+  Given User is on Login page                       # stepDefinitions.LoginSteps.loginPage()
+  When User enters "admin" and "password"           # stepDefinitions.LoginSteps.user_enters_and(java.lang.String,java.lang.String)
+  Then Read the page title and confirmation message # stepDefinitions.LoginSteps.readTitleAndHeading()
+  And Close the Browser                             # stepDefinitions.LoginSteps.closeBrowser()
+
+@activity2_5
+Scenario Outline: Testing with Data from Scenario   # src/test/java/feature/activity2_5.feature:13
+  Given User is on Login page                       # stepDefinitions.LoginSteps.loginPage()
+  When User enters "adminUser" and "Password"       # stepDefinitions.LoginSteps.user_enters_and(java.lang.String,java.lang.String)
+  Then Read the page title and confirmation message # stepDefinitions.LoginSteps.readTitleAndHeading()
+  And Close the Browser                             # stepDefinitions.LoginSteps.closeBrowser()
